@@ -12,31 +12,50 @@
 
 
 
-#define minStep 2.0f
-#define maxDist 1000
+#define minStep 0.05f
+#define maxDist 10.0f
 
 RayCaster::RayCaster(int resH,  int resV, double hFOVAngle, double vFOVAngle) : amountRaysHorizontal(resH), amountRaysVertical(resV), horizontalFOVAngle(hFOVAngle), verticalFOVAngle(vFOVAngle){
+   glm::vec4 viewDir(0.0f,0.0f,1.0f,1.0f);
+    directionRays = new glm::vec3[amountRaysHorizontal * amountRaysVertical];
+    for (int i = 0; i < (amountRaysVertical * amountRaysHorizontal); i++) {
+        float verticalAngle = (verticalFOVAngle / (amountRaysVertical - 1) * int(i/amountRaysVertical)) - verticalFOVAngle / 2;
+        glm::mat4 rotatex(1.0f);
+        rotatex = glm::rotate(rotatex, float(verticalAngle), glm::vec3(1.0f,0.0f,0.0f));
+        //left n right
+        glm::mat4 rotatez(1.0f);
+        float horizontalAngle = (horizontalFOVAngle / (amountRaysHorizontal - 1) * int(i % amountRaysHorizontal)) - horizontalFOVAngle / 2;
+        rotatez = glm::rotate(rotatez, float(horizontalAngle), glm::vec3(0.0f,1.0f,0.0f));
+        
+        directionRays[i] = rotatex * rotatez * viewDir;
+    }
 }
 
 std::vector<bool> RayCaster::getOutput(glm::vec3 cameraPos, glm::vec3 cameraAngle){
     outPut.clear();
     
     //cast rays from botleft to topright
-    glm::vec4 raydirection;
-    glm::vec4 viewDir(0.0f,0.0f,1.0f,1.0f);
+    glm::vec3 position;
+    bool hitssmth;
+    float distWalked;
+    float stepSize;
     for (int i = 0; i < (amountRaysVertical * amountRaysHorizontal); i++) {
-        //up down
-        float verticalAngle = (verticalFOVAngle / (amountRaysVertical - 1) * int(i/amountRaysVertical)) - verticalFOVAngle / 2;
-        glm::mat4 rotatex(1.0f);
-        rotatex = glm::rotate(rotatex, float(verticalAngle - cameraAngle[0]), glm::vec3(1.0f,0.0f,0.0f));
-        //left n right
-        glm::mat4 rotatez(1.0f);
-        float horizontalAngle = (horizontalFOVAngle / (amountRaysHorizontal - 1) * int(i % amountRaysHorizontal)) - horizontalFOVAngle / 2;
-        rotatez = glm::rotate(rotatez, float(horizontalAngle - cameraAngle[1]), glm::vec3(0.0f,1.0f,0.0f));
-
-        raydirection = rotatex * rotatez * viewDir;
-        
-        outPut.push_back(rayWalk(raydirection, cameraPos));
+        hitssmth = false;
+        position = cameraPos;
+        distWalked = 0;
+        while (distWalked < maxDist) {
+            stepSize = minDist(position);
+            
+            //it hits
+            if(stepSize < minStep){
+                hitssmth = true;
+                break;
+            }
+            //else walk
+            distWalked += stepSize;
+            position += directionRays[i] * stepSize;
+        }
+        outPut.push_back(hitssmth);
     }
     
     return outPut;

@@ -28,6 +28,8 @@ private:
     
     std::vector<bool> outPut;
     std::vector<float> tempres;
+    
+    glm::vec3 *directionRays;
 public:
     RayCaster(int resH,  int resV, double hFOVAngle, double vFOVAngle);
     void castDemRaysBoi();

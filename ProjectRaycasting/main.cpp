@@ -18,7 +18,7 @@
 int main(int argc, const char * argv[]) {
     
     //create the window
-    Window *window = new Window(1080,720);
+    Window *window = new Window(500,500);
     
     window->run();
     

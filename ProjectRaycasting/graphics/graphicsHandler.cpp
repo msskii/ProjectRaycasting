@@ -17,15 +17,6 @@ graphicsHandler::graphicsHandler(){
 }
 
 void graphicsHandler::init(){
-    verticies = {
-        -0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f,
-        0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f,
-        0.0f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f
-    };
-    indices = {
-       0, 1, 2
-    };
-    
     //generating the vertex buffer and vertex array
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &EBO);
@@ -50,7 +41,7 @@ void graphicsHandler::init(){
     glEnableVertexAttribArray(1);
     
     //init raycaster
-    rayCaster = new RayCaster(100,100,PI_HALF,PI_HALF);
+    rayCaster = new RayCaster(200,200,PI_HALF,PI_HALF);
     std::vector<std::vector<float>> Spheres;
     std::vector<float> Sphere = {0.0f, 0.0f, 3.0f, 1.0f};
     Spheres.push_back(Sphere);
