@@ -11,23 +11,27 @@
 		4D0045A4225627A900091318 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D0045A3225627A800091318 /* OpenGL.framework */; };
 		4D0045A6225627EB00091318 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D0045A5225627EB00091318 /* GLUT.framework */; };
 		4D0045A8225634CA00091318 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D0045A7225634CA00091318 /* libGLEW.2.1.0.dylib */; };
-		4D0045AA225634DB00091318 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D0045A9225634DB00091318 /* libglfw.3.3.dylib */; };
 		4D0045AD2256410000091318 /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D0045AB2256410000091318 /* window.cpp */; };
 		4D23B3DB2259586B00B4FF3F /* graphicsHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D23B3D92259586B00B4FF3F /* graphicsHandler.cpp */; };
 		4D23B3E4225963AC00B4FF3F /* shaderHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D23B3E2225963AC00B4FF3F /* shaderHandler.cpp */; };
 		4D23B3E8225969D600B4FF3F /* FileUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D23B3E6225969D600B4FF3F /* FileUtil.cpp */; };
 		4D23B3EE225BA55200B4FF3F /* rayCaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D23B3EC225BA55200B4FF3F /* rayCaster.cpp */; };
+		9349D2C4225F70840010A685 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9349D2C3225F70840010A685 /* libglfw.3.2.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9349D2C6225F70E20010A685 /* assets in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9349D2C5225F70E00010A685 /* assets */; };
+		9349D2CA225F71A50010A685 /* RayCL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9349D2C8225F71A50010A685 /* RayCL.cpp */; };
+		9349D2CC225F71F90010A685 /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9349D2CB225F71F90010A685 /* OpenCL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4D0045962256279000091318 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
+				9349D2C6225F70E20010A685 /* assets in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -47,14 +51,17 @@
 		4D23B3E3225963AC00B4FF3F /* shaderHandler.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = shaderHandler.hpp; sourceTree = "<group>"; };
 		4D23B3E6225969D600B4FF3F /* FileUtil.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FileUtil.cpp; sourceTree = "<group>"; };
 		4D23B3E7225969D600B4FF3F /* FileUtil.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FileUtil.hpp; sourceTree = "<group>"; };
-		4D23B3EA225B83DA00B4FF3F /* shader.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.vert; sourceTree = "<group>"; };
-		4D23B3EB225B83DA00B4FF3F /* shader.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.frag; sourceTree = "<group>"; };
 		4D23B3EC225BA55200B4FF3F /* rayCaster.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rayCaster.cpp; sourceTree = "<group>"; };
 		4D23B3ED225BA55200B4FF3F /* rayCaster.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rayCaster.hpp; sourceTree = "<group>"; };
 		4D23B3F2225BB50200B4FF3F /* Math.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Math.hpp; sourceTree = "<group>"; };
 		4D23B3F5225BB50200B4FF3F /* Vector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Vector.hpp; sourceTree = "<group>"; };
 		4D23B3F6225BB50200B4FF3F /* Matrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Matrix.hpp; sourceTree = "<group>"; };
 		4D23B3F8225BB67B00B4FF3F /* PhysicsUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicsUtil.h; sourceTree = "<group>"; };
+		9349D2C3225F70840010A685 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
+		9349D2C5225F70E00010A685 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		9349D2C8225F71A50010A685 /* RayCL.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RayCL.cpp; sourceTree = "<group>"; };
+		9349D2C9225F71A50010A685 /* RayCL.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RayCL.hpp; sourceTree = "<group>"; };
+		9349D2CB225F71F90010A685 /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D0045AA225634DB00091318 /* libglfw.3.3.dylib in Frameworks */,
+				9349D2CC225F71F90010A685 /* OpenCL.framework in Frameworks */,
+				9349D2C4225F70840010A685 /* libglfw.3.2.dylib in Frameworks */,
 				4D0045A8225634CA00091318 /* libGLEW.2.1.0.dylib in Frameworks */,
 				4D0045A6225627EB00091318 /* GLUT.framework in Frameworks */,
 				4D0045A4225627A900091318 /* OpenGL.framework in Frameworks */,
@@ -75,7 +83,7 @@
 		4D00458F2256279000091318 = {
 			isa = PBXGroup;
 			children = (
-				4D23B3E9225B83DA00B4FF3F /* assets */,
+				9349D2C5225F70E00010A685 /* assets */,
 				4D00459A2256279000091318 /* ProjectRaycasting */,
 				4D0045992256279000091318 /* Products */,
 				4D0045A2225627A700091318 /* Frameworks */,
@@ -93,6 +101,7 @@
 		4D00459A2256279000091318 /* ProjectRaycasting */ = {
 			isa = PBXGroup;
 			children = (
+				9349D2C7225F71520010A685 /* OpenCL */,
 				4D23B3DC22595E8D00B4FF3F /* Shaders */,
 				4D00459B2256279000091318 /* main.cpp */,
 				4D23B3D72257A00600B4FF3F /* config.h */,
@@ -105,6 +114,8 @@
 		4D0045A2225627A700091318 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9349D2CB225F71F90010A685 /* OpenCL.framework */,
+				9349D2C3225F70840010A685 /* libglfw.3.2.dylib */,
 				4D0045A9225634DB00091318 /* libglfw.3.3.dylib */,
 				4D0045A7225634CA00091318 /* libGLEW.2.1.0.dylib */,
 				4D0045A5225627EB00091318 /* GLUT.framework */,
@@ -148,13 +159,13 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		4D23B3E9225B83DA00B4FF3F /* assets */ = {
+		9349D2C7225F71520010A685 /* OpenCL */ = {
 			isa = PBXGroup;
 			children = (
-				4D23B3EA225B83DA00B4FF3F /* shader.vert */,
-				4D23B3EB225B83DA00B4FF3F /* shader.frag */,
+				9349D2C8225F71A50010A685 /* RayCL.cpp */,
+				9349D2C9225F71A50010A685 /* RayCL.hpp */,
 			);
-			path = assets;
+			path = OpenCL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +226,7 @@
 			files = (
 				4D23B3EE225BA55200B4FF3F /* rayCaster.cpp in Sources */,
 				4D23B3DB2259586B00B4FF3F /* graphicsHandler.cpp in Sources */,
+				9349D2CA225F71A50010A685 /* RayCL.cpp in Sources */,
 				4D00459C2256279000091318 /* main.cpp in Sources */,
 				4D23B3E8225969D600B4FF3F /* FileUtil.cpp in Sources */,
 				4D0045AD2256410000091318 /* window.cpp in Sources */,
@@ -340,9 +352,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8DMX39VBGM;
+				DEVELOPMENT_TEAM = "";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_UNUSED_FUNCTION = NO;
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw/3.2.1/lib,
+				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -352,9 +371,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8DMX39VBGM;
+				DEVELOPMENT_TEAM = "";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_UNUSED_FUNCTION = NO;
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw/3.2.1/lib,
+				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

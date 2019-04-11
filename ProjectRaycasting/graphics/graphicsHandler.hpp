@@ -20,6 +20,9 @@
 #include "../Shaders/shaderHandler.hpp"
 #include "rayCaster.hpp"
 
+#include "../OpenCL/RayCL.hpp"
+#include "../Util/PhysicsUtil.h"
+
 class graphicsHandler{
 private:
     std::vector<float> verticies;
@@ -27,6 +30,7 @@ private:
     
     unsigned int VBO,EBO;
     unsigned int VAO;
+    GLuint texID;
     
     Shader *shader;
     RayCaster *rayCaster;
